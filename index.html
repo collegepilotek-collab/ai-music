@@ -4,34 +4,31 @@
   <meta charset="UTF-8">
   <title>AI Image to Music</title>
 </head>
+
 <body style="font-family:Arial;text-align:center;">
 
-  <h2>حمل صورة</h2>
+<h2>حمل صورة</h2>
 
-  <input type="file" id="imageInput" accept="image/*">
-  <br><br>
+<input type="file" id="imageInput" accept="image/*">
+<br><br>
 
-  <button onclick="processImage()">🎵 تحويل الصورة إلى موسيقى</button>
+<button onclick="processImage()">🎵 تحويل الصورة إلى موسيقى</button>
 
-  <p id="result">النتيجة: --</p>
+<p id="result">النتيجة: ---</p>
 
-  <script>
-    function processImage(){
-      const input = document.getElementById("imageInput");
-      const result = document.getElementById("result");
+<script>
+function processImage(){
+  const input = document.getElementById("imageInput");
+  const result = document.getElementById("result");
 
-      if(input.files.length === 0){
-        alert("إختر صورة أولا");
-        return;
-      }
+  if(input.files.length === 0){
+    result.innerHTML = "❌ رجاءً اختر صورة أولاً";
+    return;
+  }
 
-      result.innerText = "⏳ جاري معالجة الصورة وتحويلها إلى موسيقى...";
-
-      setTimeout(()=>{
-        result.innerText = "✅ تمت المعالجة بنجاح (محاكاة تجريبية)";
-      }, 2000);
-    }
-  </script>
+  result.innerHTML = "✅ تمت المعالجة بنجاح (محاكاة تجريبية)";
+}
+</script>
 
 </body>
 </html>
